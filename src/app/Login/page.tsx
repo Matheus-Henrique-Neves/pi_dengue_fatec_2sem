@@ -1,24 +1,48 @@
 import React from 'react';
-import './Login.css';
+import styles from "./Login.module.css";
 
-const LoginPage: React.FC = () => {
-    return (
-<div className="container">
-  <form className="login-form">
-    <h2>Login</h2>
-    <div className="input-group">
-      <label htmlFor="email">Email:</label>
-      <input type="email" id="email" name="email" placeholder="Digite seu email" required />
+const Login = () => {
+  return (
+    <body className={styles.body}>
+    <div className={styles.container}>
+      <form className={styles.loginForm}>
+        <h2 className={styles.title}>Login</h2>
+        <div className={styles.inputGroup}>
+          <label htmlFor="email" className={styles.label}>
+            Email:
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Digite seu email"
+            className={styles.input}
+            required
+          />
+        </div>
+        <div className={styles.inputGroup}>
+          <label htmlFor="password" className={styles.label}>
+            Senha:
+          </label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Digite sua senha"
+            className={styles.input}
+            required
+          />
+        </div>
+        <button type="submit" className={styles.button}>
+          Entrar
+        </button>
+        <p className={styles.signupText}>
+          Não tem uma conta? <a href="#" className={styles.link}>Cadastre-se</a>
+        </p>
+      </form>
     </div>
-    <div className="input-group">
-      <label htmlFor="password">Senha:</label>
-      <input type="password" id="password" name="password" placeholder="Digite sua senha" required />
-    </div>
-    <button type="submit">Entrar</button>
-    <p className="signup-text">Não tem uma conta? <a href="#">Cadastre-se</a></p>
-  </form>
-</div>
+    </body>
     );
 };
 
-export default LoginPage;
+export default Login;

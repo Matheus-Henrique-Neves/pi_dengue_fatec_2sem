@@ -1,6 +1,8 @@
 "use client"
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import Link from 'next/link'
+
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,12 +27,12 @@ export default function Home() {
             <li className="flex items-center"><a href="#services" className="hover:underline block md:inline-block">Noticias</a></li>
             <li className="flex items-center"><a href="#contact" className="hover:underline block md:inline-block">dados</a></li>
             <li className="flex items-center"><a href="#contact" className="hover:underline block md:inline-block">Ações de Combate</a></li>
-            <li className="flex items-center"><a href="#contact" className="hover:underline block md:inline-block bg-yellow-500 text-black px-4 py-2 rounded-md">Login</a></li>
+            <li className="flex items-center"><Link href="/Login" className="hover:underline block md:inline-block bg-yellow-500 text-black px-4 py-2 rounded-md">Login</Link></li>
           </ul>
         </nav>
       </header>
       <main className="flex-grow pt-16">
-      {/* Main content goes here */}
+        {/* Main content goes here */}
       </main>
       <footer className="bg-blue-500 text-white p-4 mt-auto">
         <div className="container mx-auto text-center">
