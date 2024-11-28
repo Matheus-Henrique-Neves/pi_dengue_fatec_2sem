@@ -29,7 +29,7 @@ export default function Home() {
             <li className="flex items-center"><a href="#home" className="hover:underline block md:inline-block">Home</a></li>
             <li className="flex items-center"><a href="#about" className="hover:underline block md:inline-block">Região</a></li>
             <li className="flex items-center"><a href="#services" className="hover:underline block md:inline-block">Noticias</a></li>
-            <li className="flex items-center"><a href="#contact" className="hover:underline block md:inline-block">dados</a></li>
+            <li className="flex items-center"><a href="#contact" className="hover:underline block md:inline-block">Dados</a></li>
             <li className="flex items-center"><a href="#contact" className="hover:underline block md:inline-block">Ações de Combate</a></li>
             <li className="flex items-center"><Link href="/Login" className="hover:underline block md:inline-block bg-yellow-500 text-black px-4 py-2 rounded-md">Login</Link></li>
           </ul>
@@ -55,7 +55,7 @@ export default function Home() {
       </main>
       <footer className="bg-blue-500 text-white p-4 mt-12 ">
         <div className="container mx-auto text-center">
-          &copy; 2023 Your Company. All rights reserved.
+          &copy; 2024 - 2 semestre. PI Fatec Indaiatuba.
         </div>
       </footer>
     </div>
