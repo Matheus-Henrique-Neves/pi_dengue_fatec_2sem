@@ -13,7 +13,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <header className="fixed top-0 left-0 right-0 bg-blue-500 text-white p-4 shadow-md z-10">
         <nav className="container mx-auto flex justify-between items-center">
-          <div className="text-lg font-bold">Zero Dengue</div>
+          <div className="text-lg font-bold text-left">Zero Dengue</div>
           <div className="md:hidden">
             <button onClick={toggleMenu} className="text-white focus:outline-none">
               {isOpen ? <FaTimes size={28} /> : <FaBars size={28} />}
