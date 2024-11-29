@@ -37,15 +37,15 @@ export default function RegiaoPage() {
             {/* Conteúdo lado esquerdo, lista de endereços */
             <div className="grid grid-cols-1 gap-4">
               {[
-                { title: "Endereço 1", text: "123 Main St, City, Country" },
-                { title: "Endereço 2", text: "456 Elm St, City, Country" },
-                { title: "Endereço 3", text: "789 Oak St, City, Country" },
-                { title: "Endereço 4", text: "101 Pine St, City, Country" },
-                { title: "Endereço 5", text: "202 Maple St, City, Country" },
-                { title: "Endereço 6", text: "303 Birch St, City, Country" },
-                { title: "Endereço 7", text: "404 Cedar St, City, Country" },
-                { title: "Endereço 8", text: "505 Walnut St, City, Country" },
-                { title: "Endereço 9", text: "606 Cherry St, City, Country" },
+                { title: "UBS I - Visconde de Indaiatuba", text: `Endereço: Avenida Visconde de Indaiatuba, 199. Telefone: 3825-6430. E-mail: saude.ubs1@indaiatuba.sp.gov.br` },
+                { title: "UBS II - Cecap", text: `Endereço: Praça Vital Barnabé, 197 - Cecap. Telefone: 3875-5766 / 3875-6784. E-mail: saude.cecap@indaiatuba.sp.gov.br` },
+                { title: "PSF Jardim Brasil", text: `Endereço: Avenida Luiz Carlos Prestes, Jardim Brasil. Telefone: 19 3835-6969` },
+                { title: "PSF Jardim do Sol", text: `Endereço: Domingos Casa Grande, Jd Do Sol. Telefone: 19 3894-2097` },
+                { title: "UBS Jardim Carlos Aldrovandi", text: `Endereço: Av. Ângelo Bertelli Netto, 1000 - Nucleo Res. Prof. Carlos Aldrovandi. Telefone: (19) 3835-5598` },
+                { title: "UBS Parque Corolla", text: `Endereço: R. Nelson Nazário, 80 - Jardim Morada do Sol. Telefone: (19) 3894-2713` },
+                { title: "UBS II Cecap", text: `Endereço: R. Vital Barnabé - Nucleo Hab. Brg. Faria Lima. Telefone: (19) 3875-5766` },
+                { title: "UBS Jd Oliveira Camargo", text: `Endereço: R. Yoriko Gonçalves, 0 - Jardim Oliveira Camargo. Telefone: Indisponível` },
+                { title: "UBS VII", text: `R. José de Campos, 709 - Jardim Morada do Sol. Telefone: (19) 3935-3338` },
               ].map((address, index) => (
                 <div key={index} className="p-4 rounded-lg shadow-md bg-black-200 text-center border border-gray-300">
                   <h2 className="font-bold">{address.title}</h2>
@@ -59,7 +59,7 @@ export default function RegiaoPage() {
             {/* Conteúdo lado direito, mapa */
             <div className="flex items-center justify-center h-full">
               <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.9537353153167!3d-37.81627977975195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d1b6e4b0b1d!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1611815470923!5m2!1sen!2sau"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.3040999923337!2d-47.20515972466231!3d-23.085961179129367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b4b183d3173b%3A0xe4e10e5dd84bd49e!2sFatec%20Indaiatuba%20-%20Faculdade%20de%20Tecnologia%20de%20Indaiatuba%20Dr.%20Archimedes%20Lammoglia!5e0!3m2!1spt-BR!2sbr!4v1732846378488!5m2!1spt-BR!2sbr"
               width="100%"
               height="450"
               style={{ border: 0 }}
