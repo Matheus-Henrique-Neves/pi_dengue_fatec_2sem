@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./Login.module.css";
 
-const Login = () => {
+const Login  = () => {
   return (
     <body className={styles.body}>
     <div className={styles.container}>
