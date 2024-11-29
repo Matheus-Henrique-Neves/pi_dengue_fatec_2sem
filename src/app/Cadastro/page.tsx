@@ -1,6 +1,7 @@
 "use client"
 import React, { useState, useEffect } from "react";
 import styles from "../Login/Login.module.css";
+import Link from 'next/link'
 
 
 const Cadastro: React.FC = () => {
@@ -27,7 +28,7 @@ const Cadastro: React.FC = () => {
   return (
     <div className={styles.divApp}>
     <div className={styles.container}>
-      <form className={styles.form} onSubmit={handleSubmit}>
+      <div className={styles.form} onSubmit={handleSubmit}>
         <h2 className={styles.title}>Cadastro</h2>
         <div className={styles.inputGroup}>
           <label htmlFor="nome" className={styles.label}>
@@ -74,13 +75,13 @@ const Cadastro: React.FC = () => {
             required
           />
         </div>
-        <button type="submit" className={styles.button}>
+        <Link href="/Login"><p  className={styles.button}>
           Cadastrar
-        </button>
+        </p></Link>
         <p className={styles.signupText}>
-          Já tem uma conta? <a href="/login" className={styles.link}>Faça login</a>
+          Já tem uma conta? <a href="/Login" className={styles.link}>Faça login</a>
         </p>
-      </form>
+      </div>
     </div>
     </div>
     

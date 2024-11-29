@@ -1,12 +1,13 @@
 "use client"
 import React from 'react';
 import styles from "./Login.module.css";
+import Link from 'next/link';
 
 const Login  = () => {
   return (
     <div className={styles.divApp}>
     <div className={styles.container}>
-      <form className={styles.loginForm}>
+      <div className={styles.loginForm}>
         <h2 className={styles.title}>Login</h2>
         <div className={styles.inputGroup}>
           <label htmlFor="email" className={styles.label}>
@@ -34,13 +35,12 @@ const Login  = () => {
             required
           />
         </div>
-        <button type="submit" className={styles.button}>
+        <Link href="/Dados"><p  className={styles.button}>
           Entrar
-        </button>
-        <p className={styles.signupText}>
-          Não tem uma conta? <a href="#" className={styles.link}>Cadastre-se</a>
         </p>
-      </form>
+        </Link>
+       
+      </div>
     </div>
     </div>
     );
