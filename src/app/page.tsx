@@ -6,6 +6,7 @@ import Carousel from '../app/components/carousel/Carosel';
 import DengueOverview from "./components/Dengue/dengue";
 import DengueChart from "./components/Dengue/denguechart";
 import Box from "./components/diversos/box";
+import NewsCard from "./components/diversos/Noticia";
 
 
 export default function Home() {
@@ -19,18 +20,17 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <header className="fixed top-0 left-0 right-0 bg-blue-500 text-white p-4 shadow-md z-10">
         <nav className="container mx-auto flex justify-between items-center">
-          <div className="text-lg font-bold text-left">Zero Dengue</div>
+         <Link href=""> <div className="text-lg font-bold text-left">Zero Dengue</div></Link>
           <div className="md:hidden">
             <button onClick={toggleMenu} className="text-white focus:outline-none">
               {isOpen ? <FaTimes size={28} /> : <FaBars size={28} />}
             </button>
           </div>
           <ul className={`flex-col md:flex-row md:flex space-y-4 md:space-y-0 md:space-x-8 ${isOpen ? "flex" : "hidden"} md:flex`}>
-            <li className="flex items-center"><a href="#home" className="hover:underline block md:inline-block">Home</a></li>
-            <li className="flex items-center"><a href="#about" className="hover:underline block md:inline-block">Região</a></li>
-            <li className="flex items-center"><a href="#services" className="hover:underline block md:inline-block">Noticias</a></li>
-            <li className="flex items-center"><a href="#contact" className="hover:underline block md:inline-block">Dados</a></li>
-            <li className="flex items-center"><a href="#contact" className="hover:underline block md:inline-block">Ações de Combate</a></li>
+            <li className="flex items-center"><Link href="" className="hover:underline block md:inline-block">Home</Link></li>
+            <li className="flex items-center"><Link href="regiao" className="hover:underline block md:inline-block">Região</Link></li>
+            <li className="flex items-center"><Link href="Noticias" className="hover:underline block md:inline-block">Noticias</Link></li>
+            <li className="flex items-center"><Link href="Dados" className="hover:underline block md:inline-block">Dados</Link></li>
             <li className="flex items-center"><Link href="/Login" className="hover:underline block md:inline-block bg-yellow-500 text-black px-4 py-2 rounded-md">Login</Link></li>
           </ul>
         </nav>
@@ -48,6 +48,14 @@ export default function Home() {
             href: "/Login",
             text: "Acessar"
           }}/>
+          <Link href='../Noticias'> 
+       <NewsCard
+                imageSrc="https://live.staticflickr.com/65535/53513156350_16bd2513ed_b.jpg" // Substitua pela URL da imagem
+                title="Casos de Dengue Diminuem em Indaiatuba"
+                description="Casos de Dengue Diminuem em Indaiatuba apos ações de combate"
+                timeInfo="Há 6 horas atrás"
+        />
+        </Link>
           </div>
          
         

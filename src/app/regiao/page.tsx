@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
@@ -20,13 +21,12 @@ export default function RegiaoPage() {
               </button>
             </div>
             <ul className={`flex-col md:flex-row md:flex space-y-4 md:space-y-0 md:space-x-8 ${isOpen ? "flex" : "hidden"} md:flex`}>
-              <li className="flex items-center"><a href="#home" className="hover:underline block md:inline-block">Home</a></li>
-              <li className="flex items-center"><a href="#about" className="hover:underline block md:inline-block">Região</a></li>
-              <li className="flex items-center"><a href="#services" className="hover:underline block md:inline-block">Noticias</a></li>
-              <li className="flex items-center"><a href="#contact" className="hover:underline block md:inline-block">dados</a></li>
-              <li className="flex items-center"><a href="#contact" className="hover:underline block md:inline-block">Ações de Combate</a></li>
-              <li className="flex items-center"><a href="#contact" className="hover:underline block md:inline-block bg-yellow-500 text-black px-4 py-2 rounded-md">Login</a></li>
-            </ul>
+            <li className="flex items-center"><Link href="" className="hover:underline block md:inline-block">Home</Link></li>
+            <li className="flex items-center"><Link href="regiao" className="hover:underline block md:inline-block">Região</Link></li>
+            <li className="flex items-center"><Link href="Noticias" className="hover:underline block md:inline-block">Noticias</Link></li>
+            <li className="flex items-center"><Link href="Dados" className="hover:underline block md:inline-block">Dados</Link></li>
+            <li className="flex items-center"><Link href="/Login" className="hover:underline block md:inline-block bg-yellow-500 text-black px-4 py-2 rounded-md">Login</Link></li>
+          </ul>
           </nav>
         </header>
         <main className="flex-grow pt-16">
