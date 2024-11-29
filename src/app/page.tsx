@@ -2,6 +2,10 @@
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Link from 'next/link'
+import Carousel from '../app/components/carousel/Carosel';
+import DengueOverview from "./components/Dengue/dengue";
+import DengueChart from "./components/Dengue/denguechart";
+import Box from "./components/diversos/box";
 
 
 export default function Home() {
@@ -32,9 +36,24 @@ export default function Home() {
         </nav>
       </header>
       <main className="flex-grow pt-16">
-        {/* Main content goes here */}
+        <Carousel />
+        <DengueOverview />
+        <DengueChart />
+        
+        <div className="flex justify-center">
+          <Box
+          title="Quer saber mais?"
+          paragraph="faça login para ter acesso a mais informações sobre a dengue na região de Indaiatuba."
+          link={{
+            href: "/Login",
+            text: "Acessar"
+          }}/>
+          </div>
+         
+        
+        
       </main>
-      <footer className="bg-blue-500 text-white p-4 mt-auto">
+      <footer className="bg-blue-500 text-white p-4 mt-12 ">
         <div className="container mx-auto text-center">
           &copy; 2023 Your Company. All rights reserved.
         </div>
