@@ -1,9 +1,10 @@
+"use client"
 import React from 'react';
 import styles from "./Login.module.css";
 
 const Login  = () => {
   return (
-    <body className={styles.body}>
+    <div className={styles.divApp}>
     <div className={styles.container}>
       <form className={styles.loginForm}>
         <h2 className={styles.title}>Login</h2>
@@ -41,7 +42,7 @@ const Login  = () => {
         </p>
       </form>
     </div>
-    </body>
+    </div>
     );
 };
 

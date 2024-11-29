@@ -25,7 +25,7 @@ ChartJS.register(
 const DengueChart: React.FC = () => {
   const [dataArray, setDataArray] = useState<string[]>([]);
   const [casosArray, setCasosArray] = useState<number[]>([]);
-  const apiUrl = "https://pi-dengue-fatec-1-sem-2024.vercel.app/api";
+  const apiUrl = "https://api-dengue-fatec-2sem.onrender.com/apidengue/";
 
   useEffect(() => {
     const fetchData = async () => {
