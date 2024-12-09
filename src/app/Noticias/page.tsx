@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import Image from 'next/image';
 import Link from "next/link"; // Certifique-se de importar Link corretamente.
 
 const PaginaNoticia: React.FC = () => {

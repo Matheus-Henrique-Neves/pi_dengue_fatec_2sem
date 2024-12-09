@@ -9,6 +9,7 @@ import {
   Title,
   Tooltip,
   Legend,
+  TooltipItem,
 } from "chart.js";
 
 // Registrar os componentes do Chart.js
@@ -23,6 +24,7 @@ ChartJS.register(
 );
 
 const DengueChart: React.FC = () => {
+  // Definição do tipo para os dados da API
   interface DengueData {
     casos: number;
     data_iniSE: string;
@@ -36,16 +38,27 @@ const DengueChart: React.FC = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(apiUrl);
-        const baraChartJS: DengueData[] = await response.json();
 
-        const casos = baraChartJS.map((x) => x.casos);
-        const data = baraChartJS.map((x) =>
+        // Validar se o retorno é JSON
+        if (!response.ok) {
+          throw new Error(`Erro ao buscar dados: ${response.statusText}`);
+        }
+
+        const dengueData: DengueData[] = await response.json();
+
+        // Validar se os dados possuem o formato esperado
+        if (!Array.isArray(dengueData)) {
+          throw new Error("Formato de dados inesperado da API");
+        }
+
+        // Extrair dados para os gráficos
+        const casos = dengueData.map((x) => x.casos);
+        const data = dengueData.map((x) =>
           new Date(x.data_iniSE).toLocaleDateString()
         );
 
         setCasosArray(casos.reverse());
         setDataArray(data.reverse());
-        
       } catch (error) {
         console.error("Erro ao buscar os dados da API:", error);
       }
@@ -58,7 +71,7 @@ const DengueChart: React.FC = () => {
     labels: dataArray,
     datasets: [
       {
-        label: "Casos de Dengue em indaiatuba",
+        label: "Casos de Dengue em Indaiatuba",
         data: casosArray,
         borderColor: "#003E5C",
         backgroundColor: "rgba(0, 62, 92, 0.2)",
@@ -77,7 +90,8 @@ const DengueChart: React.FC = () => {
       },
       tooltip: {
         callbacks: {
-          label: (context: any) => `Casos: ${context.raw}`,
+          label: (context: TooltipItem<'line'>) =>
+            `Casos: ${context.raw}`,
         },
       },
     },
@@ -94,7 +108,7 @@ const DengueChart: React.FC = () => {
   return (
     <div className="container mx-auto mt-6 p-4 bg-white shadow rounded-lg">
       <h3 className="text-xl font-bold text-center text-[#003E5C] mb-4">
-        Monitoramento de Casos de Dengue em indaiatuba
+        Monitoramento de Casos de Dengue em Indaiatuba
       </h3>
       <div className="relative h-96 w-full">
         <Line data={chartData} options={chartOptions} />

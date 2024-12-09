@@ -9,6 +9,7 @@ import {
     Title,
     Tooltip,
     Legend,
+    TooltipItem,
 } from "chart.js";
 
 // Registrar os componentes do Chart.js
@@ -44,11 +45,11 @@ const DengueComparisonChart: React.FC = () => {
                 const response = await fetch(apiUrl);
                 const dataFromApi: ApiResponse[] = await response.json();
 
-                const casos = dataFromApi.map((x: ApiResponse) => x.casos);
-                const casosEstMax = dataFromApi.map((x: ApiResponse) => x.casos_est_max);
-                const casosEstMin = dataFromApi.map((x: ApiResponse) => x.casos_est_min);
-                const casosEst = dataFromApi.map((x: ApiResponse) => x.casos_est);
-                const data = dataFromApi.map((x: ApiResponse) =>
+                const casos = dataFromApi.map((x) => x.casos);
+                const casosEstMax = dataFromApi.map((x) => x.casos_est_max);
+                const casosEstMin = dataFromApi.map((x) => x.casos_est_min);
+                const casosEst = dataFromApi.map((x) => x.casos_est);
+                const data = dataFromApi.map((x) =>
                     new Date(x.data_iniSE).toLocaleDateString()
                 );
 
@@ -60,27 +61,6 @@ const DengueComparisonChart: React.FC = () => {
             } catch (error) {
                 console.error("Erro ao buscar os dados da API:", error);
             }
-            /*try {
-                const response = await fetch(apiUrl);
-                const dataFromApi = await response.json();
-
-                const casos = dataFromApi.map((x: any) => x.casos);
-                const casosEstMax = dataFromApi.map((x: any) => x.casos_est_max);
-                const casosEstMin = dataFromApi.map((x: any) => x.casos_est_min);
-                const casosEst = dataFromApi.map((x: any) => x.casos_est);
-                const data = dataFromApi.map((x: any) =>
-                    new Date(x.data_iniSE).toLocaleDateString()
-                );
-
-                setCasosArray(casos.reverse());
-                setCasosEstMaxArray(casosEstMax.reverse());
-                setCasosEstMinArray(casosEstMin.reverse());
-                setCasosEstArray(casosEst.reverse());
-                setDataArray(data.reverse());
-            } catch (error) {
-                console.error("Erro ao buscar os dados da API:", error);
-            }
-                codigo legado por any não funcionar no vercel*/
         };
 
         fetchData();
@@ -100,7 +80,7 @@ const DengueComparisonChart: React.FC = () => {
             {
                 label: "Casos Estimados Máximos",
                 data: casosEstMaxArray,
-                borderColor: "#FF5733", // cor diferente para visualização
+                borderColor: "#FF5733",
                 backgroundColor: "rgba(255, 87, 51, 0.2)",
                 borderWidth: 2,
                 fill: false,
@@ -108,7 +88,7 @@ const DengueComparisonChart: React.FC = () => {
             {
                 label: "Casos Estimados Mínimos",
                 data: casosEstMinArray,
-                borderColor: "#33FF57", // cor diferente para visualização
+                borderColor: "#33FF57",
                 backgroundColor: "rgba(51, 255, 87, 0.2)",
                 borderWidth: 2,
                 fill: false,
@@ -116,7 +96,7 @@ const DengueComparisonChart: React.FC = () => {
             {
                 label: "Casos Estimados",
                 data: casosEstArray,
-                borderColor: "#FFC300", // cor diferente para visualização
+                borderColor: "#FFC300",
                 backgroundColor: "rgba(255, 195, 0, 0.2)",
                 borderWidth: 2,
                 fill: false,
@@ -134,7 +114,7 @@ const DengueComparisonChart: React.FC = () => {
             },
             tooltip: {
                 callbacks: {
-                    label: (context: any) => `Casos: ${context.raw}`,
+                    label: (context: TooltipItem<'line'>) => `Casos: ${context.raw}`,
                 },
             },
         },
@@ -152,9 +132,12 @@ const DengueComparisonChart: React.FC = () => {
         <div>
             <div className="mt-12 flex justify-center">
                 <div className="bg-blue-100 rounded-lg shadow-lg p-6 max-w-sm text-center">
-                    <h5 className="text-lg font-semibold text-blue-700">Monitoramento de Casos!</h5>
+                    <h5 className="text-lg font-semibold text-blue-700">
+                        Monitoramento de Casos!
+                    </h5>
                     <p className="text-gray-600 mt-2">
-                        Acompanhe em tempo real os casos de dengue na sua região através de nosso gráfico.
+                        Acompanhe em tempo real os casos de dengue na sua região através de
+                        nosso gráfico.
                     </p>
                 </div>
             </div>
@@ -168,7 +151,8 @@ const DengueComparisonChart: React.FC = () => {
                 </div>
             </div>
         </div>
-            );
+    );
 };
 
-            export default DengueComparisonChart;
+export default DengueComparisonChart;
+
