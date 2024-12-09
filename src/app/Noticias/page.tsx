@@ -35,7 +35,7 @@ const PaginaNoticia: React.FC = () => {
         <section className="container mx-auto">
           {/* Imagem da Notícia */}
           <div className="w-full mb-6 flex justify-center">
-            <Image
+            <img
               src="https://live.staticflickr.com/65535/53513156350_16bd2513ed_b.jpg"
               alt="Imagem da notícia"
               className="w-80% h-auto rounded-lg shadow-lg center"
