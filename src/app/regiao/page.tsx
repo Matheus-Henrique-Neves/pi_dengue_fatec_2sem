@@ -21,7 +21,7 @@ export default function RegiaoPage() {
               </button>
             </div>
             <ul className={`flex-col md:flex-row md:flex space-y-4 md:space-y-0 md:space-x-8 ${isOpen ? "flex" : "hidden"} md:flex`}>
-            <li className="flex items-center"><Link href="" className="hover:underline block md:inline-block">Home</Link></li>
+            <li className="flex items-center"><Link href="/" className="hover:underline block md:inline-block">Home</Link></li>
             <li className="flex items-center"><Link href="regiao" className="hover:underline block md:inline-block">Região</Link></li>
             <li className="flex items-center"><Link href="Noticias" className="hover:underline block md:inline-block">Noticias</Link></li>
             <li className="flex items-center"><Link href="Dados" className="hover:underline block md:inline-block">Dados</Link></li>

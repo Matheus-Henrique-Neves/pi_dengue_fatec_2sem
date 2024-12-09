@@ -20,14 +20,14 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <header className="fixed top-0 left-0 right-0 bg-blue-500 text-white p-4 shadow-md z-10">
         <nav className="container mx-auto flex justify-between items-center">
-         <Link href=""> <div className="text-lg font-bold text-left">Zero Dengue</div></Link>
+         <Link href="/"> <div className="text-lg font-bold text-left">Zero Dengue</div></Link>
           <div className="md:hidden">
             <button onClick={toggleMenu} className="text-white focus:outline-none">
               {isOpen ? <FaTimes size={28} /> : <FaBars size={28} />}
             </button>
           </div>
           <ul className={`flex-col md:flex-row md:flex space-y-4 md:space-y-0 md:space-x-8 ${isOpen ? "flex" : "hidden"} md:flex`}>
-            <li className="flex items-center"><Link href="" className="hover:underline block md:inline-block">Home</Link></li>
+            <li className="flex items-center"><Link href="/" className="hover:underline block md:inline-block">Home</Link></li>
             <li className="flex items-center"><Link href="regiao" className="hover:underline block md:inline-block">Região</Link></li>
             <li className="flex items-center"><Link href="Noticias" className="hover:underline block md:inline-block">Noticias</Link></li>
             <li className="flex items-center"><Link href="Dados" className="hover:underline block md:inline-block">Dados</Link></li>
