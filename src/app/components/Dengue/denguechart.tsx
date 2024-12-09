@@ -23,6 +23,11 @@ ChartJS.register(
 );
 
 const DengueChart: React.FC = () => {
+  interface DengueData {
+    casos: number;
+    data_iniSE: string;
+  }
+
   const [dataArray, setDataArray] = useState<string[]>([]);
   const [casosArray, setCasosArray] = useState<number[]>([]);
   const apiUrl = "https://api-dengue-fatec-2sem.onrender.com/apidengue/";
@@ -31,15 +36,16 @@ const DengueChart: React.FC = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(apiUrl);
-        const baraChartJS = await response.json();
+        const baraChartJS: DengueData[] = await response.json();
 
-        const casos = baraChartJS.map((x: any) => x.casos);
-        const data = baraChartJS.map((x: any) =>
+        const casos = baraChartJS.map((x) => x.casos);
+        const data = baraChartJS.map((x) =>
           new Date(x.data_iniSE).toLocaleDateString()
         );
 
         setCasosArray(casos.reverse());
         setDataArray(data.reverse());
+        
       } catch (error) {
         console.error("Erro ao buscar os dados da API:", error);
       }

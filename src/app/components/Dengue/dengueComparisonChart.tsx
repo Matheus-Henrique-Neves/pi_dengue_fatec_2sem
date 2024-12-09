@@ -32,7 +32,35 @@ const DengueComparisonChart: React.FC = () => {
 
     useEffect(() => {
         const fetchData = async () => {
+            type ApiResponse = {
+                casos: number;
+                casos_est_max: number;
+                casos_est_min: number;
+                casos_est: number;
+                data_iniSE: string;
+            };
+
             try {
+                const response = await fetch(apiUrl);
+                const dataFromApi: ApiResponse[] = await response.json();
+
+                const casos = dataFromApi.map((x: ApiResponse) => x.casos);
+                const casosEstMax = dataFromApi.map((x: ApiResponse) => x.casos_est_max);
+                const casosEstMin = dataFromApi.map((x: ApiResponse) => x.casos_est_min);
+                const casosEst = dataFromApi.map((x: ApiResponse) => x.casos_est);
+                const data = dataFromApi.map((x: ApiResponse) =>
+                    new Date(x.data_iniSE).toLocaleDateString()
+                );
+
+                setCasosArray(casos.reverse());
+                setCasosEstMaxArray(casosEstMax.reverse());
+                setCasosEstMinArray(casosEstMin.reverse());
+                setCasosEstArray(casosEst.reverse());
+                setDataArray(data.reverse());
+            } catch (error) {
+                console.error("Erro ao buscar os dados da API:", error);
+            }
+            /*try {
                 const response = await fetch(apiUrl);
                 const dataFromApi = await response.json();
 
@@ -52,6 +80,7 @@ const DengueComparisonChart: React.FC = () => {
             } catch (error) {
                 console.error("Erro ao buscar os dados da API:", error);
             }
+                codigo legado por any não funcionar no vercel*/
         };
 
         fetchData();
